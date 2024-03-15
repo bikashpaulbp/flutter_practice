@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/app/modules/webview/views/webview_view.dart';
-import 'package:flutter_practice/app/routes/app_pages.dart';
 
 import 'package:get/get.dart';
 
@@ -36,7 +35,7 @@ class DynamicTextFormFieldView extends GetView<DynamicTextFormFieldController> {
                         padding: const EdgeInsets.all(8.0),
                         child: TextFormField(
                           controller: controllers[index],
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               labelText: "Enter your text",
                               border: OutlineInputBorder()),
                         ),
@@ -53,9 +52,9 @@ class DynamicTextFormFieldView extends GetView<DynamicTextFormFieldController> {
                         controllers.add(TextEditingController());
                       });
                     },
-                    child: Text("Add new field")),
+                    child: const Text("Add new field")),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 100,
               )
             ],
@@ -71,7 +70,7 @@ class DynamicTextFormFieldView extends GetView<DynamicTextFormFieldController> {
                   url: url,
                 ));
               },
-              child: Text("View Code")),
+              child: const Text("View Code")),
         ],
       ),
     );

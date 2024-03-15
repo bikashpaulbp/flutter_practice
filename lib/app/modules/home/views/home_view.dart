@@ -22,7 +22,7 @@ class HomeView extends GetView<HomeController> {
         child: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width / 1.5,
-          color: Color.fromARGB(255, 240, 240, 240),
+          color: const Color.fromARGB(255, 240, 240, 240),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -33,7 +33,7 @@ class HomeView extends GetView<HomeController> {
                   height: 100,
                   width: MediaQuery.of(context).size.width / 1.5,
                   color: const Color.fromARGB(255, 127, 127, 127),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "CONTENT",
                       style: TextStyle(
@@ -42,7 +42,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 TextButton(
@@ -50,7 +50,7 @@ class HomeView extends GetView<HomeController> {
                     Get.back();
                     Get.toNamed(Routes.DYNAMIC_TEXT_FORM_FIELD);
                   },
-                  child: Text(
+                  child: const Text(
                     "Dynamic TextFormField",
                     style: TextStyle(
                         color: Color.fromARGB(255, 165, 165, 165),
@@ -64,7 +64,7 @@ class HomeView extends GetView<HomeController> {
                       url: webViewUrl,
                     ));
                   },
-                  child: Text(
+                  child: const Text(
                     "Web View Code",
                     style: TextStyle(
                         color: Color.fromARGB(255, 165, 165, 165),
@@ -98,7 +98,7 @@ class HomeView extends GetView<HomeController> {
                 Container(
                   height: MediaQuery.of(context).size.height / 6,
                   width: MediaQuery.of(context).size.width / 4,
-                  color: Color.fromARGB(255, 38, 245, 6),
+                  color: const Color.fromARGB(255, 38, 245, 6),
                 ),
               ],
             ),
@@ -107,7 +107,7 @@ class HomeView extends GetView<HomeController> {
               child: Center(
                 child: Stack(
                   clipBehavior: Clip.none,
-                  alignment: Alignment(1.5, 1.5),
+                  alignment: const Alignment(1.5, 1.5),
                   children: [
                     Container(
                       height: MediaQuery.of(context).size.height / 4,
@@ -117,7 +117,7 @@ class HomeView extends GetView<HomeController> {
                     Container(
                       height: MediaQuery.of(context).size.height / 8,
                       width: MediaQuery.of(context).size.width / 4,
-                      color: Color.fromARGB(255, 225, 54, 244),
+                      color: const Color.fromARGB(255, 225, 54, 244),
                     ),
                     Positioned(
                       bottom: 40,
@@ -125,7 +125,7 @@ class HomeView extends GetView<HomeController> {
                       child: Container(
                         height: MediaQuery.of(context).size.height / 8,
                         width: MediaQuery.of(context).size.width / 4,
-                        child: CircleAvatar(
+                        child: const CircleAvatar(
                           backgroundColor: Colors.amber,
                         ),
                       ),
@@ -134,8 +134,8 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 100),
+            const Padding(
+              padding: EdgeInsets.only(top: 100),
               child: Text(
                 "Practice code with different page",
                 style: TextStyle(color: Colors.blue, fontSize: 20),
@@ -153,7 +153,7 @@ class HomeView extends GetView<HomeController> {
                   url: url,
                 ));
               },
-              child: Text("View Code")),
+              child: const Text("View Code")),
         ],
       ),
     );
