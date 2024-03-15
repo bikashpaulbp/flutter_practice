@@ -9,7 +9,8 @@ class PageViewView extends GetView<PageViewController> {
   const PageViewView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    String url = "";
+    String url =
+        "https://github.com/bikashpaulbp/flutter_practice/blob/main/lib/app/modules/page_view/views/page_view_view.dart";
 
     PageController controller = PageController(initialPage: 0);
 
@@ -53,7 +54,14 @@ class Page1 extends StatefulWidget {
 class _Page1State extends State<Page1> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: const Color.fromARGB(255, 7, 181, 255),
+      child: Center(
+          child: Text(
+        "Page 01",
+        style: TextStyle(color: Colors.white, fontSize: 20),
+      )),
+    );
   }
 }
 
@@ -67,7 +75,14 @@ class Page2 extends StatefulWidget {
 class _Page2State extends State<Page2> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: Colors.amber,
+      child: Center(
+          child: Text(
+        "Page 02",
+        style: TextStyle(color: Colors.white, fontSize: 20),
+      )),
+    );
   }
 }
 
@@ -81,6 +96,13 @@ class Page3 extends StatefulWidget {
 class _Page3State extends State<Page3> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: const Color.fromARGB(255, 255, 7, 197),
+      child: Center(
+          child: Text(
+        "Page 03",
+        style: TextStyle(color: Colors.white, fontSize: 20),
+      )),
+    );
   }
 }
