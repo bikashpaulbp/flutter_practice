@@ -86,6 +86,21 @@ class HomeView extends GetView<HomeController> {
                         fontSize: 20),
                   ),
                 ),
+                TextButton(
+                  onPressed: () {
+                    Get.back();
+                    Get.toNamed(Routes.BOTTOM_NAVIGATION_BAR);
+                    // Get.to(WebviewView(
+                    //   url: webViewUrl,
+                    // ));
+                  },
+                  child: const Text(
+                    "Bottom Navigation Bar",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 165, 165, 165),
+                        fontSize: 20),
+                  ),
+                ),
               ],
             ),
           ),

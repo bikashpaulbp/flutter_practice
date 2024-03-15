@@ -3,30 +3,48 @@ import 'package:flutter_practice/app/modules/webview/views/webview_view.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/page_view_controller.dart';
+import '../controllers/bottom_navigation_bar_controller.dart';
 
-class PageViewView extends GetView<PageViewController> {
-  const PageViewView({Key? key}) : super(key: key);
+class BottomNavigationBarView extends GetView<BottomNavigationBarController> {
+  const BottomNavigationBarView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    String url =
-        "https://github.com/bikashpaulbp/flutter_practice/blob/main/lib/app/modules/page_view/views/page_view_view.dart";
+    String url = "";
 
-    PageController controller = PageController(initialPage: 0);
+    var currentIndex = 0;
+
+    List pages = [
+      Page1(),
+      Page2(),
+      Page3(),
+      Page4(),
+    ];
 
     return StatefulBuilder(
       builder: (BuildContext context, setState) => Scaffold(
         appBar: AppBar(
-          title: const Text('Page View'),
+          title: const Text('Bottom Navigation Bar'),
           centerTitle: true,
         ),
-        body: SafeArea(
-          child: PageView(
-            controller: controller,
-            scrollDirection: Axis.horizontal,
-            children: [Page1(), Page2(), Page3()],
-          ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: currentIndex,
+          items: [
+            BottomNavigationBarItem(
+                backgroundColor: Color.fromARGB(255, 255, 52, 25),
+                icon: Icon(Icons.home),
+                label: "Page 1"),
+            BottomNavigationBarItem(icon: Icon(Icons.login), label: "Page 2"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.logo_dev), label: "Page 3"),
+            BottomNavigationBarItem(icon: Icon(Icons.face), label: "Page 4"),
+          ],
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
         ),
+        body: pages[currentIndex],
         bottomSheet: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -101,6 +119,28 @@ class _Page3State extends State<Page3> {
       child: Center(
         child: Text(
           "Page 03",
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+      ),
+    );
+  }
+}
+
+class Page4 extends StatefulWidget {
+  const Page4({super.key});
+
+  @override
+  State<Page4> createState() => _Page4State();
+}
+
+class _Page4State extends State<Page4> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Color.fromARGB(255, 32, 255, 7),
+      child: Center(
+        child: Text(
+          "Page 04",
           style: TextStyle(color: Colors.white, fontSize: 20),
         ),
       ),

@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/bottom_navigation_bar/bindings/bottom_navigation_bar_binding.dart';
+import '../modules/bottom_navigation_bar/views/bottom_navigation_bar_view.dart';
 import '../modules/dynamic_textFormField/bindings/dynamic_text_form_field_binding.dart';
 import '../modules/dynamic_textFormField/views/dynamic_text_form_field_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.PAGE_VIEW,
       page: () => const PageViewView(),
       binding: PageViewBinding(),
+    ),
+    GetPage(
+      name: _Paths.BOTTOM_NAVIGATION_BAR,
+      page: () => const BottomNavigationBarView(),
+      binding: BottomNavigationBarBinding(),
     ),
   ];
 }

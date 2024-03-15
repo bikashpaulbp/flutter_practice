@@ -7,6 +7,7 @@ abstract class Routes {
   static const DYNAMIC_TEXT_FORM_FIELD = _Paths.DYNAMIC_TEXT_FORM_FIELD;
   static const WEBVIEW = _Paths.WEBVIEW;
   static const PAGE_VIEW = _Paths.PAGE_VIEW;
+  static const BOTTOM_NAVIGATION_BAR = _Paths.BOTTOM_NAVIGATION_BAR;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const DYNAMIC_TEXT_FORM_FIELD = '/dynamic-text-form-field';
   static const WEBVIEW = '/webview';
   static const PAGE_VIEW = '/page-view';
+  static const BOTTOM_NAVIGATION_BAR = '/bottom-navigation-bar';
 }
