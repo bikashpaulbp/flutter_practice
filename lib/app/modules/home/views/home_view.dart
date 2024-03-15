@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/app/modules/webview/views/webview_view.dart';
 import 'package:flutter_practice/app/routes/app_pages.dart';
 
 import 'package:get/get.dart';
@@ -8,9 +9,14 @@ import '../controllers/home_controller.dart';
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
+    String url =
+        "https://github.com/bikashpaulbp/flutter_practice/blob/main/lib/app/modules/home/views/home_view.dart";
+
+    String webViewUrl =
+        "https://github.com/bikashpaulbp/flutter_practice/blob/main/lib/app/modules/webview/views/webview_view.dart";
+
     return Scaffold(
       drawer: SafeArea(
         child: Container(
@@ -40,16 +46,31 @@ class HomeView extends GetView<HomeController> {
                   height: 30,
                 ),
                 TextButton(
-                    onPressed: () {
-                      Get.back();
-                      Get.toNamed(Routes.DYNAMIC_TEXT_FORM_FIELD);
-                    },
-                    child: Text(
-                      "Dynamic TextFormField",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 165, 165, 165),
-                          fontSize: 20),
-                    ))
+                  onPressed: () {
+                    Get.back();
+                    Get.toNamed(Routes.DYNAMIC_TEXT_FORM_FIELD);
+                  },
+                  child: Text(
+                    "Dynamic TextFormField",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 165, 165, 165),
+                        fontSize: 20),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Get.back();
+                    Get.to(WebviewView(
+                      url: webViewUrl,
+                    ));
+                  },
+                  child: Text(
+                    "Web View Code",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 165, 165, 165),
+                        fontSize: 20),
+                  ),
+                ),
               ],
             ),
           ),
@@ -128,7 +149,9 @@ class HomeView extends GetView<HomeController> {
         children: [
           ElevatedButton(
               onPressed: () {
-                Get.toNamed(Routes.WEBVIEW);
+                Get.to(WebviewView(
+                  url: url,
+                ));
               },
               child: Text("View Code")),
         ],

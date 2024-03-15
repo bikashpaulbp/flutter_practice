@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/app/modules/webview/views/webview_view.dart';
+import 'package:flutter_practice/app/routes/app_pages.dart';
 
 import 'package:get/get.dart';
 
@@ -8,6 +10,9 @@ class DynamicTextFormFieldView extends GetView<DynamicTextFormFieldController> {
   const DynamicTextFormFieldView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    String url =
+        "https://github.com/bikashpaulbp/flutter_practice/blob/main/lib/app/modules/dynamic_textFormField/views/dynamic_text_form_field_view.dart";
+
     List<TextEditingController> controllers = [];
 
     return Scaffold(
@@ -57,7 +62,18 @@ class DynamicTextFormFieldView extends GetView<DynamicTextFormFieldController> {
           ),
         ),
       ),
-      
+      bottomSheet: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+              onPressed: () {
+                Get.to(WebviewView(
+                  url: url,
+                ));
+              },
+              child: Text("View Code")),
+        ],
+      ),
     );
   }
 }
