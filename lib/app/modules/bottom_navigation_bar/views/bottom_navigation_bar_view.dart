@@ -9,7 +9,8 @@ class BottomNavigationBarView extends GetView<BottomNavigationBarController> {
   const BottomNavigationBarView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    String url = "";
+    String url =
+        "https://github.com/bikashpaulbp/flutter_practice/blob/main/lib/app/modules/bottom_navigation_bar/views/bottom_navigation_bar_view.dart";
 
     var currentIndex = 0;
 
