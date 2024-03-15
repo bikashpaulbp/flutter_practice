@@ -71,6 +71,21 @@ class HomeView extends GetView<HomeController> {
                         fontSize: 20),
                   ),
                 ),
+                TextButton(
+                  onPressed: () {
+                    Get.back();
+                    Get.toNamed(Routes.PAGE_VIEW);
+                    // Get.to(WebviewView(
+                    //   url: webViewUrl,
+                    // ));
+                  },
+                  child: const Text(
+                    "Page View",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 165, 165, 165),
+                        fontSize: 20),
+                  ),
+                ),
               ],
             ),
           ),

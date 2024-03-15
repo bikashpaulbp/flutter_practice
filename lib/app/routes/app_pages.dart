@@ -4,6 +4,8 @@ import '../modules/dynamic_textFormField/bindings/dynamic_text_form_field_bindin
 import '../modules/dynamic_textFormField/views/dynamic_text_form_field_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/page_view/bindings/page_view_binding.dart';
+import '../modules/page_view/views/page_view_view.dart';
 import '../modules/webview/bindings/webview_binding.dart';
 import '../modules/webview/views/webview_view.dart';
 
@@ -27,8 +29,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.WEBVIEW,
-      page: () =>  WebviewView(),
+      page: () => WebviewView(),
       binding: WebviewBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAGE_VIEW,
+      page: () => const PageViewView(),
+      binding: PageViewBinding(),
     ),
   ];
 }
